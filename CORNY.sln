@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35913.81 d17.13
+VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CORNY", "CORNY\CORNY.csproj", "{BEC4F5F2-F080-4D9B-84A8-3C1F6587E2F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CORNY", "CORNY\CORNY.csproj", "{BEC4F5F2-F080-4D9B-84A8-3C1F6587E2F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{D40DEC14-6CEF-4154-8DBA-B13749EDB7D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuissnessLogicLayer", "BuissnessLogicLayer\BuissnessLogicLayer.csproj", "{4C44B328-E07F-4F90-85FD-314B89326DA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{BEC4F5F2-F080-4D9B-84A8-3C1F6587E2F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEC4F5F2-F080-4D9B-84A8-3C1F6587E2F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEC4F5F2-F080-4D9B-84A8-3C1F6587E2F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D40DEC14-6CEF-4154-8DBA-B13749EDB7D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D40DEC14-6CEF-4154-8DBA-B13749EDB7D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D40DEC14-6CEF-4154-8DBA-B13749EDB7D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D40DEC14-6CEF-4154-8DBA-B13749EDB7D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C44B328-E07F-4F90-85FD-314B89326DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C44B328-E07F-4F90-85FD-314B89326DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C44B328-E07F-4F90-85FD-314B89326DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C44B328-E07F-4F90-85FD-314B89326DA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
