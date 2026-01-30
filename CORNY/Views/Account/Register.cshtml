@@ -1,0 +1,110 @@
+﻿@model CORNY.Models.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container" style="max-width: 720px;">
+    <h1 class="mb-4">Register</h1>
+
+    <form asp-action="Register" method="post">
+        @Html.AntiForgeryToken()
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label asp-for="FirstName" class="form-label">
+                    @Html.DisplayNameFor(m => m.FirstName) <span class="text-danger">*</span>
+                </label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="LastName" class="form-label">
+                    @Html.DisplayNameFor(m => m.LastName) <span class="text-danger">*</span>
+                </label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="col-12">
+                <label asp-for="Email" class="form-label">
+                    Email address <span class="text-danger">*</span>
+                </label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="PhoneNumber" class="form-label">
+                    Phone Number <span class="text-danger">*</span>
+                </label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="Birthday" class="form-label">
+                    Birthday <span class="text-danger">*</span>
+                </label>
+                <input asp-for="Birthday" type="date" class="form-control" />
+                <span asp-validation-for="Birthday" class="text-danger"></span>
+                <div class="text-muted mt-1">Must be 18+ to make an account.</div>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="Password" class="form-label">
+                    Password <span class="text-danger">*</span>
+                </label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="ConfirmPassword" class="form-label">
+                    Re-type Password <span class="text-danger">*</span>
+                </label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <div class="col-12 mt-2">
+                <div class="form-check">
+                    <input asp-for="AcceptTerms" class="form-check-input" />
+                    <label class="form-check-label" for="AcceptTerms">
+                        To create an account you must comply with our Terms and Conditions and our Privacy Policy
+                        <span class="text-danger">*</span>
+                    </label>
+                </div>
+
+                <!-- d-block forces the message onto its own line under the checkbox -->
+                <span asp-validation-for="AcceptTerms" class="text-danger d-block mt-1"></span>
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-success w-100 py-2">Sign Up</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="mt-3">
+        <a asp-action="Login">Already have an account? Log in</a>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        // Client-side validation for [MustBeTrue]
+        (function () {
+            if (!window.jQuery || !$.validator || !$.validator.unobtrusive) return;
+
+            $.validator.addMethod("mustbetrue", function (value, element) {
+                return element.checked === true;
+            });
+
+            $.validator.unobtrusive.adapters.addBool("mustbetrue");
+        })();
+    </script>
+}
